@@ -76,12 +76,38 @@ html, body {
     margin-top: -20%;
 }
 
-.stars-container {
-    text-align: left; /* Выравнивание по левому краю */
-    margin-left: -60%; /* Убираем отступ слева */
-    padding-left: 0;
-    margin-top: -10%;
-  }
+.rating {
+  font-size: 0;
+  text-align: left;
+  margin-left: 0;
+  padding-left: 0;
+}
+
+
+.star {
+  font-size: 40px;
+  color: #ccc;
+  display: inline-block;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.star:hover,
+.star:hover ~ .star {
+  color: #DF96EF;
+  transform: scale(1.2);
+}
+
+.star.active {
+  color: #DF96EF;
+  animation: pulse 0.5s;
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.3); }
+  100% { transform: scale(1); }
+}
   
   .stars-image {
     margin-right: auto; /* Прижимаем к левому краю */
@@ -89,7 +115,8 @@ html, body {
     height: auto;
   }
   /* Стили для блока комментариев */
-.comments-section {
+
+  .comments-section {
 
     width: 80%;
     max-width: 800px;

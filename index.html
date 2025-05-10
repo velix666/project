@@ -7,6 +7,50 @@
     <title>Викторина</title>
 </head>
 <body>
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const stars = document.querySelectorAll('.star');
+        const ratingText = document.querySelector('.rating-text');
+        let currentRating = 0;
+        stars.forEach(star => {
+          star.addEventListener('click', function() {
+            const value = parseInt(this.getAttribute('data-value'));
+            currentRating = value;
+            stars.forEach(s => {
+              s.classList.remove('active');
+              if (parseInt(s.getAttribute('data-value')) <= value) {
+                s.classList.add('active');
+              }
+            });
+            const ratingMessages = [
+              "Оцените нас!",
+              "Ужасно",
+              "Плохо",
+              "Нормально",
+              "Хорошо",
+              "Отлично"
+            ];
+            ratingText.textContent = ratingMessages[value];
+          });
+          
+          star.addEventListener('mouseover', function() {
+            const value = parseInt(this.getAttribute('data-value'));
+            
+            stars.forEach(s => {
+              s.classList.remove('hover');
+              if (parseInt(s.getAttribute('data-value')) <= value) {
+                s.classList.add('hover');
+              }
+            });
+          });
+          
+          star.addEventListener('mouseout', function() {
+            stars.forEach(s => s.classList.remove('hover'));
+          });
+        });
+      });
+    </script>
+
     <div class="fixed-background">
         <img src="image/photo.jpg" class="background-image" alt="background">
     </div>
@@ -30,10 +74,14 @@
             <div class="rate-us">
                 <img src="image/rate us text.png" alt="оцените нас заголовок">
             </div>
-            <div class="stars-container">
-                <img src="image/star.png" alt="Рейтинг" class="stars-image">
-                <img src="image/Star full.png" alt="рейтинг заполненный">
-            </div>
+            <div class="rating">
+                <span class="star" data-value="1">★</span>
+                <span class="star" data-value="2">★</span>
+                <span class="star" data-value="3">★</span>
+                <span class="star" data-value="4">★</span>
+                <span class="star" data-value="5">★</span>
+              </div>
+              <p class="rating-text">Оцените нас!</p>
             <div class="comments-section">
                 <h3 class="comments-title">Комментарии</h3>
                 

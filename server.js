@@ -5,7 +5,6 @@ const { Pool } = require('pg');
 
 const app = express();
 
-// Middleware
 app.use(cors({
   origin: 'http://localhost:5500',
   methods: ['GET', 'POST', 'OPTIONS'],
@@ -13,7 +12,6 @@ app.use(cors({
 }));
 app.use(express.json());
 
-// DB Config
 const pool = new Pool({
   user: process.env.DB_USER,
   password: process.env.DB_PASSWORD,
@@ -22,7 +20,6 @@ const pool = new Pool({
   port: process.env.DB_PORT || 5432
 });
 
-// Test DB Connection
 pool.connect()
   .then((client) => {
     console.log('Connected to PostgreSQL');
@@ -30,7 +27,6 @@ pool.connect()
   })
   .catch(err => console.error('PostgreSQL connection error:', err));
 
-// Routes
 app.get('/api/comments', async (req, res) => {
   try {
     const { rows } = await pool.query(`
@@ -79,8 +75,6 @@ app.post('/api/comments', async (req, res) => {
     res.status(500).json({ error: 'Failed to save comment' });
   }
 });
-
-// Health check endpoint
 app.get('/api/health', (req, res) => {
   res.status(200).json({ status: 'OK', timestamp: new Date() });
 });
@@ -90,7 +84,6 @@ app.listen(PORT, () => {
   console.log(`Server running on http://localhost:${PORT}`);
 });
 
-// Graceful shutdown
 process.on('SIGTERM', () => {
   pool.end()
     .then(() => {

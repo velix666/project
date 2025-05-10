@@ -1,5 +1,4 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // Configuration
     const API_URL = 'http://localhost:3000/api/comments';
     const commentsList = document.querySelector('.comments-list');
     const commentForm = document.querySelector('.comment-form');
@@ -10,7 +9,6 @@ document.addEventListener('DOMContentLoaded', () => {
     
     let currentRating = 0;
 
-    // Initialize rating system
     stars.forEach(star => {
         star.addEventListener('click', () => {
             currentRating = parseInt(star.getAttribute('data-value'));
@@ -52,7 +50,6 @@ document.addEventListener('DOMContentLoaded', () => {
         ratingText.textContent = ratings[currentRating];
     }
 
-    // Load comments from server
     async function loadComments() {
         try {
             showLoading();
@@ -77,7 +74,6 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
-    // Render comments to DOM
     function renderComments(comments) {
         commentsList.innerHTML = comments.map(comment => `
             <div class="comment">
@@ -97,7 +93,6 @@ document.addEventListener('DOMContentLoaded', () => {
         `).join('');
     }
 
-    // Format date
     function formatDate(dateString) {
         const options = { 
             year: 'numeric', 
@@ -109,22 +104,18 @@ document.addEventListener('DOMContentLoaded', () => {
         return new Date(dateString).toLocaleDateString('ru-RU', options);
     }
 
-    // Show loading state
     function showLoading() {
         commentsList.innerHTML = '<div class="loading">Загрузка комментариев...</div>';
     }
 
-    // Show empty state
     function showEmptyMessage() {
         commentsList.innerHTML = '<div class="empty">Пока нет комментариев. Будьте первым!</div>';
     }
 
-    // Show error state
     function showError(message) {
         commentsList.innerHTML = `<div class="error">${message}</div>`;
     }
 
-    // Handle form submission
     async function handleSubmit(e) {
         e.preventDefault();
         
@@ -153,7 +144,6 @@ document.addEventListener('DOMContentLoaded', () => {
                 throw new Error(`Ошибка сервера: ${response.status}`);
             }
             
-            // Clear form and reload comments
             commentInput.value = '';
             commentAuthor.value = '';
             currentRating = 0;
@@ -167,7 +157,6 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
-    // Event listeners
     commentForm.addEventListener('submit', handleSubmit);
 
     // Initial load

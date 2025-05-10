@@ -3,54 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/style.css">
     <title>Викторина</title>
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <script>
-    document.addEventListener('DOMContentLoaded', function() {
-        const stars = document.querySelectorAll('.star');
-        const ratingText = document.querySelector('.rating-text');
-        let currentRating = 0;
-        stars.forEach(star => {
-          star.addEventListener('click', function() {
-            const value = parseInt(this.getAttribute('data-value'));
-            currentRating = value;
-            stars.forEach(s => {
-              s.classList.remove('active');
-              if (parseInt(s.getAttribute('data-value')) <= value) {
-                s.classList.add('active');
-              }
-            });
-            const ratingMessages = [
-              "Оцените нас!",
-              "Ужасно",
-              "Плохо",
-              "Нормально",
-              "Хорошо",
-              "Отлично"
-            ];
-            ratingText.textContent = ratingMessages[value];
-          });
-          
-          star.addEventListener('mouseover', function() {
-            const value = parseInt(this.getAttribute('data-value'));
-            
-            stars.forEach(s => {
-              s.classList.remove('hover');
-              if (parseInt(s.getAttribute('data-value')) <= value) {
-                s.classList.add('hover');
-              }
-            });
-          });
-          
-          star.addEventListener('mouseout', function() {
-            stars.forEach(s => s.classList.remove('hover'));
-          });
-        });
-      });
-    </script>
-
     <div class="fixed-background">
         <img src="image/photo.jpg" class="background-image" alt="background">
     </div>
@@ -68,9 +24,11 @@
                     <img src="image/download.png" alt="Скачать игру">
                 </a>
             </div>
+            
             <div class="description">
                 <img src="image/description.png" alt="название игры-описание">
             </div>
+            
             <div class="rate-us">
                 <img src="image/rate us text.png" alt="оцените нас заголовок">
             </div>
@@ -80,35 +38,33 @@
                 <span class="star" data-value="3">★</span>
                 <span class="star" data-value="4">★</span>
                 <span class="star" data-value="5">★</span>
-              </div>
-              <p class="rating-text">Оцените нас!</p>
+            </div>
+            <p class="rating-text">Оцените нас!</p>
+            
             <div class="comments-section">
                 <h3 class="comments-title">Комментарии</h3>
                 
-                <!-- Форма добавления комментария -->
                 <div class="comment-form">
-                  <textarea class="comment-input" placeholder="Оставьте ваш комментарий..."></textarea>
-                  <button class="submit-btn">Отправить</button>
+                    <input type="text" class="comment-author" placeholder="Ваше имя (необязательно)">
+                    <textarea class="comment-input" placeholder="Ваш комментарий..." required></textarea>
+                    <button class="submit-btn">Отправить</button>
                 </div>
                 
-                <!-- Список комментариев -->
                 <div class="comments-list">
-                  <!-- Пример комментария -->
-                  <div class="comment">
-                    <div class="comment-author">Игрок</div>
-                    <div class="comment-text">Отличная игра! Очень интересные вопросы.</div>
-                    <div class="comment-date">30.04.2025</div>
-                  </div>
-                  <div>
+                    <div class="loading">Загрузка комментариев...</div>
+                </div>
+                
+                <div class="team-info">
                     <ul>
                         <li><a href="https://github.com/yournick" target="_blank">@yournick</a> – velix</li>
                         <li><a href="https://github.com/teammate1" target="_blank">@teammate1</a> – что сделал(а)</li>
                         <li><a href="https://github.com/teammate2" target="_blank">@teammate2</a> – что сделал(а)</li>
-                      </ul>
-                  </div>
+                    </ul>
                 </div>
-              </div>
+            </div>
         </div>
     </div>
+
+    <script src="js/main.js"></script>
 </body>
 </html>

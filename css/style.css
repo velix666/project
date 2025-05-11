@@ -202,6 +202,7 @@ html, body {
     opacity: 0;
     transform: translateY(20px);
     animation: fadeIn 0.5s forwards;
+    
   }
   
   @keyframes fadeIn {
@@ -214,13 +215,15 @@ html, body {
    .credits-name {
    font-family: AT Tugan;
    line-height: 2;
+   text-align: left;
+   margin-left: -25%;
    
   }
 
     .credits {
    justify-content: center;
    width:auto;
-   margin-left: 20%;
+
   }
 
   a[target="_blank"] {
@@ -230,8 +233,57 @@ a[target="_blank"]:hover {
   color:#950BE9; /* Розовый при наведении */
 }
 
-.rating-text {
-   font-family: AT Tugan;
+
+/* Стили для блока description */
+.description {
+    position: relative; /* Для абсолютного позиционирования текста */
+    min-height: 200px; /* Минимальная высота блока */
+    margin-bottom: 30px;
+}
+
+.description .text {
+    position: absolute;
+    left: 0;
+    top: 5%; /* Можно регулировать вертикальное положение текста */
+    width: 50%; /* Ширина текстового блока */
+    padding-right: 20px;
+    box-sizing: border-box;
+    column-count: auto;
+    font-family: AT Tugan;
     letter-spacing: 0.3cap;
-    color: #DF96EF;
+    color: #6e48aa;
+    word-break: keep-all; /* Предотвращает разрыв слов */
+    hyphens: auto; /* Автоматическая расстановка переносов (если нужно) */
+    text-align: justify; /* Выравнивание по ширине */
+    
+    /* Оптимальное расстояние между словами и буквами */
+    word-spacing: normal;
+    letter-spacing: normal;
+    
+    /* Читабельные отступы и интерлиньяж */
+    line-height: 1.5; /* Оптимальный межстрочный интервал */
+    padding: 10px;
+    margin: 0;
+    
+    /* Максимальная ширина для удобочитаемости */
+    max-width: 600px; /* Можно регулиров
+}
+
+.description img:first-child {
+    margin-bottom: 15px; /* Отступ между картинками */
+}
+
+.description img {
+    display: block;
+    margin-left: 50%; /* Картинки будут справа */
+}
+.photo-3 {
+ position: relative;
+ margin-top: -24.1%;
+ margin-left: -45%;
+ min-height: 200px;
+display: block;
+}
+.name-play {
+  margin-top: 10%;
 }

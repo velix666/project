@@ -7,53 +7,6 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-
-
-    <script>
-    document.addEventListener('DOMContentLoaded', function() {
-        const stars = document.querySelectorAll('.star');
-        const ratingText = document.querySelector('.rating-text');
-        let currentRating = 0;
-        stars.forEach(star => {
-          star.addEventListener('click', function() {
-            const value = parseInt(this.getAttribute('data-value'));
-            currentRating = value;
-            stars.forEach(s => {
-              s.classList.remove('active');
-              if (parseInt(s.getAttribute('data-value')) <= value) {
-                s.classList.add('active');
-              }
-            });
-            const ratingMessages = [
-              "Rate Us!",
-              "Terrible",
-              "Bad",
-              "Average",
-              "Good",
-              "Great"
-            ];
-            ratingText.textContent = ratingMessages[value];
-          });
-          
-          star.addEventListener('mouseover', function() {
-            const value = parseInt(this.getAttribute('data-value'));
-            
-            stars.forEach(s => {
-              s.classList.remove('hover');
-              if (parseInt(s.getAttribute('data-value')) <= value) {
-                s.classList.add('hover');
-              }
-            });
-          });
-          
-          star.addEventListener('mouseout', function() {
-            stars.forEach(s => s.classList.remove('hover'));
-          });
-        });
-      });
-    </script>
-
-
     <div class="fixed-background">
         <img src="image/photo.jpg" class="background-image" alt="background">
     </div>
@@ -71,75 +24,101 @@
                     <img src="image/download.png" alt="Скачать игру">
                 </a>
             </div>
+            <img src="image/time to know.png" alt="название игры" class="name-play">
+           <div class="description">
+                <img src="image/картинки игры.png" alt="картинки игры">
+                  <p class = "text">
+                  "Time to Know" is a fun and exciting quiz for smart players. In this game, you can compete with friends by answering a variety of questions on different topics, from science to everyday life. Philosophy, chemistry, movies, history—in short, we’ve got it ALL!
+                  </p>
+           </div>
+             <img src="image/третья картинка игры.png" alt="3 photo" class="photo-3">
+           <div class="rate-us">
+             <img src="image/rate us text.png" alt="оцените нас заголовок">
+           </div>
             
-            <div class="description">
-                <img src="image/description.png" alt="название игры-описание">
-            </div>
-            
-            <div class="rate-us">
-                <img src="image/rate us text.png" alt="оцените нас заголовок">
-            </div>
             <div class="rating">
                 <span class="star" data-value="1">★</span>
                 <span class="star" data-value="2">★</span>
                 <span class="star" data-value="3">★</span>
                 <span class="star" data-value="4">★</span>
                 <span class="star" data-value="5">★</span>
-
             </div>
-            <p class="rating-text">Оцените нас!</p>
+            <p class="rating-text">Ratu us!</p>
             
-
-              </div>
-              <p class="rating-text">Rate us!</p>
-
             <div class="comments-section">
                 <h3 class="comments-title">Comments</h3>
                 
                 <div class="comment-form">
-
-                    <input type="text" class="comment-author" placeholder="Ваше имя (необязательно)">
-                    <textarea class="comment-input" placeholder="Ваш комментарий..." required></textarea>
-                    <button class="submit-btn">Отправить</button>
-
-                  <textarea class="comment-input" placeholder="leave your comment..."></textarea>
-                  <button class="submit-btn">send</button>
-
+                    <input type="text" class="comment-author" placeholder="Your name (optional)">
+                    <textarea class="comment-input" placeholder="Вyour comment.." required></textarea>
+                    <button class="submit-btn">send</button>
                 </div>
                 
                 <div class="comments-list">
-
                     <div class="loading">Загрузка комментариев...</div>
-                </div>
-                
-                <div class="team-info">
-                    <ul>
-                        <li><a href="https://github.com/yournick" target="_blank">@yournick</a> – velix</li>
-                        <li><a href="https://github.com/teammate1" target="_blank">@teammate1</a> – что сделал(а)</li>
-                        <li><a href="https://github.com/teammate2" target="_blank">@teammate2</a> – что сделал(а)</li>
-                    </ul>
+                    <!-- Пример комментария -->
+                    <div class="comment">
+                        <div class="comment-author">Игрок</div>
+                        <div class="comment-text">Отличная игра! Очень интересные вопросы.</div>
+                        <div class="comment-date">30.04.2025</div>
+                    </div>
                 </div>
             </div>
-
-                  <!-- Пример комментария -->
-                  <div class="comment">
-                    <div class="comment-author">Игрок</div>
-                    <div class="comment-text">Отличная игра! Очень интересные вопросы.</div>
-                    <div class="comment-date">30.04.2025</div>
-                  </div>
-                </div>
-                <div>
-                     <img src="image/название игры.png" alt="кредит" class="credits">
-                      <ul class="credits-name">
-                        <li><a href="https://github.com/velix666" target="_blank">@velix666</a> </li>
-                        <li><a href="https://github.com/BobRedHead" target="_blank">@BobRedHead</a> </li>
-                        <li><a href="https://github.com/Dicainum" target="_blank">@Dicainum</a> </li>
-                      </ul>
-                  </div>
-              </div>
-
+            
+            <div class="credits">
+                <img src="image/название игры.png" alt="кредит" class="credits-image">
+                <ul class="credits-name">
+                    <li><a href="https://github.com/velix666" target="_blank">@velix666</a></li>
+                    <li><a href="https://github.com/BobRedHead" target="_blank">@BobRedHead</a></li>
+                    <li><a href="https://github.com/Dicainum" target="_blank">@Dicainum</a></li>
+                </ul>
+            </div>
         </div>
     </div>
+
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const stars = document.querySelectorAll('.star');
+        const ratingText = document.querySelector('.rating-text');
+        let currentRating = 0;
+        
+        stars.forEach(star => {
+            star.addEventListener('click', function() {
+                const value = parseInt(this.getAttribute('data-value'));
+                currentRating = value;
+                updateStars(value);
+                
+                const ratingMessages = [
+                    "Rate us!",
+                    "Terrible",
+                    "Bad",
+                    "Normal",
+                    "Good",
+                    "Excellent"
+                ];
+                ratingText.textContent = ratingMessages[value];
+            });
+            
+            star.addEventListener('mouseover', function() {
+                const value = parseInt(this.getAttribute('data-value'));
+                updateStars(value, true);
+            });
+            
+            star.addEventListener('mouseout', function() {
+                updateStars(currentRating);
+            });
+        });
+        
+        function updateStars(value, isHover = false) {
+            stars.forEach(s => {
+                s.classList.remove('active', 'hover');
+                if (parseInt(s.getAttribute('data-value')) <= value) {
+                    s.classList.add(isHover ? 'hover' : 'active');
+                }
+            });
+        }
+    });
+    </script>
 
     <script src="js/main.js"></script>
 </body>

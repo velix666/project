@@ -6,6 +6,22 @@ html, body {
     overflow-x: hidden;
 }
 
+.scrollable-content {
+  position: relative;
+  z-index: 1;
+  min-height: 100vh;
+}
+
+.container {
+  position: relative;
+  margin: 0% auto;
+  float: center;
+  width: 970px;
+  height: 3550px;
+  text-align: center;
+  background: white;
+}
+
 .fixed-background {
     position: fixed;
     top: 0;
@@ -21,19 +37,13 @@ html, body {
     object-fit: cover;
 }
 
-.scrollable-content {
-    position: relative;
-    z-index: 1;
-    min-height: 100vh;
-}
-
 .logo-overlay {
     position: absolute;
-    top: 40%;
-    left: 56.7%;
+    left: 595px;
+    top: 400px;
     transform: translate(-50%, -50%);
-    max-width: 82%;
-    max-height: 82%;
+    width: 100%;
+    max-height: 100%;
     width: auto;
     height: auto;
     z-index: 2;
@@ -41,7 +51,7 @@ html, body {
 
 .game-container {
     position: absolute;
-    top: 84%;
+    top: 820px;
     left: 51.2%;
     transform: translateX(-50%);
     width: 960px;
@@ -59,6 +69,7 @@ html, body {
     align-items: center;
     border-radius: 10px;
 }
+
 .download-container {
    margin-top: 5%;
 }
@@ -72,13 +83,17 @@ html, body {
 
 .rate-us {
     justify-content: center;
+    transform: scale(1.2);
     width: 100%;
-    margin-top: -20%;
+    margin-top: -18%;
+    margin-right: 22.5%;
 }
 
 .rating {
+  z-index: 2;
   font-size: 0;
   text-align: left;
+  margin-top: -50px;
   margin-left: 0;
   padding-left: 0;
 }
@@ -117,57 +132,52 @@ html, body {
   /* Стили для блока комментариев */
 
   .comments-section {
-
     width: 80%;
     max-width: 800px;
-    margin: 40px auto;
+    margin: -15px auto;
     padding: 20px;
    color: #6e48aa;
     border-radius: 10px;
-    
   }
   
   .comments-title {
     color: #950BE9;
     margin-bottom: 20px;
     font-size: 20px;
-    font-family: AT Tugan;
+    font-family: Impact;
     letter-spacing: 0.3cap;
-    
   }
   
   /* Форма комментария */
   .comment-form {
     margin-bottom: 40px;
     max-width: 80%;
-    
-    
   }
   
   .comment-input {
-    width: 100%;
+    width: 750px;
     height: 100%;
     padding: 15px;
-    border: 1px solid #FFFAFE;
+    border: 1px solid #747474;
     border-radius: 8px;
     resize: vertical;
-    font-family: inherit;
+    font-family: Impact;
     font-size: 16px;
+    margin-top: 30px;
     margin-bottom: 10px;
-    
-   
   }
   
   .submit-btn {
     background: #DF96EF;
     color: white;
     border: none;
-    padding: 10px 20px;
+    padding: 10px 50px;
+    margin-left: 150px;
     border-radius: 5px;
     cursor: pointer;
     font-size: 16px;
     transition: background 0.3s;
-    font-family: AT Tugan;
+    font-family: Impact;
     letter-spacing: 0.3cap;
   }
   
@@ -182,9 +192,13 @@ html, body {
   
   
   .comment-author {
+    border-radius: 5px;
+    width: 400px;
+    height: 20px;
+    position: absolute;
     font-weight: bold;
     color: #6e48aa;
-    margin-bottom: 5px;
+    margin-left: 0px;
   }
   
   .comment-text {
@@ -213,14 +227,18 @@ html, body {
   }
 
    .credits-name {
-   font-family: AT Tugan;
+   font-family: Impact;
    line-height: 2;
    text-align: left;
    margin-left: -25%;
    
   }
 
-    .credits {
+  .credits-image {
+    padding-top: 50px;
+  }
+
+  .credits {
    justify-content: center;
    width:auto;
 
@@ -243,13 +261,13 @@ a[target="_blank"]:hover {
 
 .description .text {
     position: absolute;
-    left: 0;
+    left: 3%;
     top: 5%; /* Можно регулировать вертикальное положение текста */
-    width: 50%; /* Ширина текстового блока */
-    padding-right: 20px;
+    width: 40%; /* Ширина текстового блока */
+    padding-right: 10px;
     box-sizing: border-box;
     column-count: auto;
-    font-family: AT Tugan;
+    font-family: Impact;
     letter-spacing: 0.3cap;
     color: #6e48aa;
     word-break: keep-all; /* Предотвращает разрыв слов */
@@ -266,11 +284,7 @@ a[target="_blank"]:hover {
     margin: 0;
     
     /* Максимальная ширина для удобочитаемости */
-    max-width: 600px; /* Можно регулиров
-}
-
-.description img:first-child {
-    margin-bottom: 15px; /* Отступ между картинками */
+    max-width: 600px;
 }
 
 .description img {

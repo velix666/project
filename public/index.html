@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Time to Know</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="fixed-background">
+        <img src="image/photo.jpg" class="background-image" alt="background">
+    </div>
+    
+    <div class = "container">
+    <div class="scrollable-content">
+        <img src="image/logos.png" class="logo-overlay" alt="logo">
+        
+        <div class="game-container">
+            <div class="unity-game">
+                <img src="image/play.png" class="run-game" alt="play">
+            </div>
+            
+            <div class="download-container">
+                <a href="https://drive.google.com/drive/folders/1AchWZUvlSLBe8Moxfsuq4K-xXelC_fy8?usp=sharing">
+                    <img src="image/download.png" alt="Скачать игру">
+                </a>
+            </div>
+            <img src="image/time to know.png" alt="название игры" class="name-play">
+           <div class="description">
+                <img src="image/картинки игры.png" alt="картинки игры">
+                  <p class = "text">
+                  "Time to Know" is a fun and exciting quiz for smart players. In this game, you can compete with friends by answering a variety of questions on different topics, from science to everyday life. Philosophy, chemistry, movies, history — in short, we’ve got it ALL!
+                  </p>
+           </div>
+             <img src="image/третья картинка игры.png" alt="3 photo" class="photo-3">
+           <div class="rate-us">
+             <img src="image/rate us text.png" alt="оцените нас заголовок">
+           </div>
+            
+            <div class="rating">
+                <span class="star" data-value="5">★</span>
+                <span class="star" data-value="4">★</span>
+                <span class="star" data-value="3">★</span>
+                <span class="star" data-value="2">★</span>
+                <span class="star" data-value="1">★</span>
+            </div>
+            <p class="rating-text">Rate us!</p>
+            
+            <div class="comments-section">
+                <h3 class="comments-title">Comments</h3>
+                
+                <div class="comment-form">
+                    <input type="text" class="comment-author" placeholder="Your name (optional)">
+                    <textarea class="comment-input" placeholder="Your comment.." required></textarea>
+                    <button class="submit-btn">Send</button>
+                </div>
+                
+                <div class="comments-list">
+                    <div class="loading">Loading comments...</div>
+                </div>
+            </div>
+            
+            <div class="credits">
+                <img src="image/название игры.png" alt="кредит" class="credits-image">
+                <ul class="credits-name">
+                    <li><a href="https://github.com/velix666" target="_blank">@velix666</a></li>
+                    <li><a href="https://github.com/BobRedHead" target="_blank">@BobRedHead</a></li>
+                    <li><a href="https://github.com/Dicainum" target="_blank">@Dicainum</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const stars = document.querySelectorAll('.star');
+        const ratingText = document.querySelector('.rating-text');
+        let currentRating = 0;
+        
+        stars.forEach(star => {
+            star.addEventListener('click', function() {
+                const value = parseInt(this.getAttribute('data-value'));
+                currentRating = value;
+                updateStars(value);
+                
+                const ratingMessages = [
+                    "Rate us!",
+                    "Terrible",
+                    "Bad",
+                    "Normal",
+                    "Good",
+                    "Excellent"
+                ];
+                ratingText.textContent = ratingMessages[value];
+            });
+            
+            star.addEventListener('mouseover', function() {
+                const value = parseInt(this.getAttribute('data-value'));
+                updateStars(value, true);
+            });
+            
+            star.addEventListener('mouseout', function() {
+                updateStars(currentRating);
+            });
+        });
+        
+        function updateStars(value, isHover = false) {
+            stars.forEach(s => {
+                s.classList.remove('active', 'hover');
+                if (parseInt(s.getAttribute('data-value')) >= value) {
+                    s.classList.add(isHover ? 'hover' : 'active');
+                }
+            });
+        }
+    });
+    </script> -->
+
+    <script src="js/main.js"></script>
+</div>
+</body>
+</html>
